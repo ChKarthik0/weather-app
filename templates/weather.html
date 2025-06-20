@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="weather-result card">
+    <div class="card-body">
+        <h2 class="card-title">
+            {{ weather.city }}, {{ weather.country }}
+            <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather icon">
+        </h2>
+        
+        <div class="weather-data">
+            <p><strong>Temperature:</strong> {{ weather.temp }}°C (Feels like {{ weather.feels_like }}°C)</p>
+            <p><strong>Conditions:</strong> {{ weather.description|title }}</p>
+            <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+            <p><strong>Wind Speed:</strong> {{ weather.wind }} m/s</p>
+        </div>
+        
+        <a href="/" class="btn btn-secondary mt-3">Back to Search</a>
+    </div>
+</div>
+{% endblock %}
